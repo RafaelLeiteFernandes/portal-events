@@ -61,7 +61,7 @@ export default function Footer() {
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 <Link
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/sitio.portaldasaguas"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-dourado transition-colors duration-300"
@@ -134,7 +134,7 @@ export default function Footer() {
           <motion.p variants={itemVariants} className="text-white/60 text-sm mt-4 md:mt-0">
             Desenvolvido por{" "}
             <a href="#" className="text-dourado hover:underline" target="_blank" rel="noopener noreferrer">
-              Seu Nome
+              Rafael Leite Fernandes
             </a>
           </motion.p>
           <motion.div variants={itemVariants} className="mt-4 md:mt-0">

@@ -8,42 +8,42 @@ import GalleryModal from "./gallery-modal"
 const galleryImages = [
   {
     id: 1,
-    src: "/placeholder.svg?key=mr6vg",
+    src: "/temp/1 (3).png",
     alt: "Recepção de casamento elegante",
   },
   {
     id: 2,
-    src: "/placeholder.svg?key=xebu8",
+    src: "/temp/1 (4).png",
     alt: "Cerimônia ao ar livre",
   },
   {
     id: 3,
-    src: "/elegant-quinceanera.png",
+    src: "/temp/1 (2).png",
     alt: "Festa de 15 anos",
   },
   {
     id: 4,
-    src: "/placeholder.svg?key=h1zzj",
+    src: "/temp/1 (7).png",
     alt: "Evento corporativo",
   },
   {
     id: 5,
-    src: "/placeholder.svg?key=b9q8n",
+    src: "/temp/1 (6).png",
     alt: "Bolo de casamento",
   },
   {
     id: 6,
-    src: "/placeholder.svg?key=k9i6t",
+    src: "/temp/1 (1).png",
     alt: "Festa de aniversário",
   },
   {
     id: 7,
-    src: "/placeholder.svg?key=cwhut",
+    src: "/temp/1 (5).png",
     alt: "Mesa de recepção",
   },
   {
     id: 8,
-    src: "/placeholder.svg?key=ijuu3",
+    src: "/temp/1 (8).png",
     alt: "Espaço ao ar livre à noite",
   },
 ]
