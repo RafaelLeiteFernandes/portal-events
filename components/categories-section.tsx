@@ -9,13 +9,13 @@ const categories = [
     id: "casamentos",
     title: "Casamentos",
     description: "Realize o casamento dos seus sonhos em um cenário encantador.",
-    image: "/elegant-wedding-ceremony.png",
+    image: "/IMG_20241017_225308_3842.png",
   },
   {
     id: "15-anos",
     title: "15 Anos",
     description: "Comemore esta data especial com uma festa inesquecível.",
-    image: "/elegant-quinceanera.png",
+    image: "/IMG_20221121_132252_009.jpg",
   },
   {
     id: "aniversarios",

@@ -83,7 +83,7 @@ export default function AboutSection() {
             className="relative h-[400px] md:h-[500px] overflow-hidden shadow-soft img-zoom-container"
           >
             <Image
-              src="/elegant-event-venue.png"
+              src="/elegant-event-venue.jpg"
               alt="Portal das Águas - Espaço de Eventos"
               fill
               className="object-cover img-zoom"
