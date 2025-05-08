@@ -147,7 +147,7 @@ export default function ContactSection() {
           variants={formVariants}
           initial="hidden"
           animate={controls}
-          className="bg-white p-8 md:p-10 shadow-soft"
+          className="bg-white p-8 md:p-10 shadow-soft rounded-lg"
         >
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

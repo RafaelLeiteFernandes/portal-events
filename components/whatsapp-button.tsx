@@ -2,6 +2,8 @@
 
 import { Phone } from "lucide-react"
 import { motion } from "framer-motion"
+import { FaWhatsapp } from "react-icons/fa"
+
 
 export default function WhatsAppButton() {
   return (
@@ -25,7 +27,7 @@ export default function WhatsAppButton() {
       whileTap={{ scale: 0.95 }}
       aria-label="Contato via WhatsApp"
     >
-      <Phone className="h-6 w-6" />
+      <FaWhatsapp className="h-6 w-6" />
     </motion.a>
   )
 }

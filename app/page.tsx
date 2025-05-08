@@ -10,6 +10,7 @@ import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
 import WhatsAppButton from "@/components/whatsapp-button"
 import { useScrollReveal } from "@/lib/scroll-reveal"
+import DifferentialsSection from "@/components/differentials-section"
 
 export default function Home() {
   // Use the scroll reveal hook
@@ -20,6 +21,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <AboutSection />
+      <DifferentialsSection />
       <CategoriesSection />
       <GallerySection />
       <TestimonialsSection />

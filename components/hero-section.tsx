@@ -8,7 +8,6 @@ import Image from "next/image"
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null)
 
-  // Parallax effect on scroll
   useEffect(() => {
     const handleScroll = () => {
       if (!sectionRef.current) return
@@ -74,21 +73,23 @@ export default function HeroSection() {
 
       <div className="container mx-auto px-4 z-10 text-center">
         <motion.div variants={containerVariants} initial="hidden" animate="visible" className="max-w-3xl mx-auto">
+          <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-playfair font-bold text-white leading-tight tracking-tight mb-2">Tornamos seus momentos</motion.h1>
+
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-6xl font-playfair font-bold text-white mb-8 leading-tight"
+            className="text-6xl md:text-8xl font-playfair font-extrabold text-gradient drop-shadow-lg mb-10"
           >
-            Tornamos seus momentos <span className="text-gradient">inesquecíveis</span>
+            inesquecíveis
           </motion.h1>
 
-          <motion.p variants={itemVariants} className="text-xl md:text-2xl text-white/90 mb-10 font-lato font-light">
+          <motion.p variants={itemVariants} className="text-2xl md:text-3xl text-white/90 mb-12 font-lato font-normal">
             Eventos exclusivos em um cenário de sonhos
           </motion.p>
 
           <motion.div variants={itemVariants}>
             <Button
               onClick={scrollToContact}
-              className="bg-dourado hover:bg-dourado/90 text-white font-medium px-8 py-6 rounded-none btn-minimal btn-shine hover-lift"
+              className="bg-dourado hover:bg-dourado/90 text-white text-lg md:text-xl font-semibold px-10 py-6 rounded-none shadow-lg transition-all duration-300 hover:scale-105 btn-shine hover-lift"
             >
               Agende seu evento
             </Button>

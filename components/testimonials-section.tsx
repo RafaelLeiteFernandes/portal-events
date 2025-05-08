@@ -115,7 +115,7 @@ export default function TestimonialsSection() {
         </motion.div>
 
         <motion.div variants={containerVariants} initial="hidden" animate={controls} className="relative">
-          <div className="overflow-hidden">
+          <div className="overflow-hidden rounded-lg">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}

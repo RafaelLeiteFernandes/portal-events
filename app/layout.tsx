@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className={`${playfair.variable} ${lato.variable} font-sans bg-off-white`}>
+      <body className={`${playfair.variable} ${lato.variable} font-sans bg-off-white2`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
           {children}
         </ThemeProvider>

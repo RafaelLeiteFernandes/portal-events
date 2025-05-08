@@ -80,7 +80,7 @@ export default function AboutSection() {
             variants={imageVariants}
             initial="hidden"
             animate={controls}
-            className="relative h-[400px] md:h-[500px] overflow-hidden shadow-soft img-zoom-container"
+            className="relative h-[400px] md:h-[500px] overflow-hidden shadow-soft img-zoom-container rounded-lg shadow-sm"
           >
             <Image
               src="/elegant-event-venue.jpg"
