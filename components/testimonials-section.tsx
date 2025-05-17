@@ -303,7 +303,7 @@ export default function TestimonialsSection() {
             transition={{ delay: 0.6, duration: 0.5 }}
           >
             <motion.a
-              href="https://www.google.com/search?q=Portal+das+Águas+eventos+avaliações"
+              href="https://www.google.com/search?q=Portal+das+%C3%81guas+eventos+avalia%C3%A7%C3%B5es+Mafra&sca_esv=376a3409f9ec4160&sxsrf=AHTn8zopN6Cdwim1ZyLiOUJfgcWi7pK39w%3A1747489498847&ei=2pIoaMi4M9fT1sQPqbqXmQ0&ved=0ahUKEwjIjc_W0aqNAxXXqZUCHSndJdMQ4dUDCBA&uact=5&oq=Portal+das+%C3%81guas+eventos+avalia%C3%A7%C3%B5es+Mafra&gs_lp=Egxnd3Mtd2l6LXNlcnAiLFBvcnRhbCBkYXMgw4FndWFzIGV2ZW50b3MgYXZhbGlhw6fDtWVzIE1hZnJhMgUQIRigATIFECEYoAEyBRAhGKABSLkRUIwBWOEOcAF4AJABAJgB-AGgAdUHqgEFMC41LjG4AQPIAQD4AQGYAgegAvoHwgILEAAYgAQYsAMYogTCAggQABiwAxjvBZgDAIgGAZAGBZIHBTEuNS4xoAexFbIHBTAuNS4xuAfwB8IHBTAuNS4yyAcW&sclient=gws-wiz-serp"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-300 text-grafite hover:text-dourado group"
