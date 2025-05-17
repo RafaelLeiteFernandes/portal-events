@@ -8,37 +8,43 @@ const differentials = [
   {
     id: 1,
     title: "Tudo em um só lugar",
-    description: "Espaço, buffet, cerimonial, decoração e estrutura — comodidade total para você não se preocupar com nada.",
+    description: "Cerimônia, festa, buffet e organização em um só espaço.",
     images: ["/diferenciais/tudo1.jpg", "/diferenciais/tudo2.jpg", "/diferenciais/tudo3.jpg"],
   },
   {
     id: 2,
-    title: "Infraestrutura Completa",
-    description: "Mesas, cadeiras, toalhas, talheres, louças e taças inclusos. Você não precisa contratar à parte.",
-    images: ["/diferenciais/infra1.jpg", "/diferenciais/infra2.jpg"],
+    title: "Infraestrutura Inclusa",
+    description: "Mesas, cadeiras, toalhas, taças, talheres — tudo já incluso.",
+    images: Array.from({ length: 13 }, (_, i) => `/diferential/infra/infra${i + 1}.jpg`)
   },
   {
     id: 3,
-    title: "Buffet Reconhecido",
-    description: "Considerado o melhor da região pelos nossos clientes. Gastronomia impecável que impressiona no sabor e na apresentação.",
-    images: Array.from({ length: 15 }, (_, i) => `/diferential/buffet/buffet${i + 1}.jpg`)
+    title: "Mobiliário para decoração",
+    description: "Acervo próprio, com móveis charmosos e prontos para usar.",
+    images: Array.from({ length: 13 }, (_, i) => `/diferential/infra/infra${i + 1}.jpg`)
   },
   {
     id: 4,
-    title: "Ambientes Versáteis",
-    description: "Do campo ao moderno: diversos cenários em um único local, para cerimônias ao ar livre ou eventos sofisticados.",
-    images: ["/diferenciais/amb1.jpg", "/diferenciais/amb2.jpg"],
+    title: "Buffet premiado pelos próprios convidados",
+    description: "Já fui convidada para muitos casamentos, mas foi o melhor que já experimentei” — Marta, engenheira de alimentos.",
+    images: Array.from({ length: 15 }, (_, i) => `/diferential/buffet/buffet${i + 1}.jpg`)
   },
   {
     id: 5,
-    title: "Equipe de Cerimonial Própria",
-    description: "Organização e suporte do início ao fim com profissionais experientes e atenciosos.",
-    images: ["/diferenciais/cerimonial1.jpg", "/diferenciais/cerimonial2.jpg"],
+    title: "Ambiente climatizado",
+    description: "Conforto garantido em qualquer estação do ano.",
+    images: Array.from({ length: 17 }, (_, i) => `/diferential/amb/amb${i + 1}.jpg`)
   },
   {
     id: 6,
-    title: "Ambiente Climatizado",
-    description: "Conforto o ano todo. Nossos ambientes internos são climatizados e preparados para qualquer estação.",
+    title: "Equipe própria de organização e cerimonial.",
+    description: "Apoio completo do planejamento à execução do evento.",
+    images: ["/diferenciais/cerimonial1.jpg", "/diferenciais/cerimonial2.jpg"],
+  },
+  {
+    id: 7,
+    title: "Vários ambientes no mesmo espaço.",
+    description: "Natureza ao redor + salão moderno e sofisticado.",
     images: ["/diferenciais/clima1.jpg", "/diferenciais/clima2.jpg"],
   },
 ]

@@ -57,22 +57,35 @@ export default function AboutSection() {
           <motion.div variants={containerVariants} initial="hidden" animate={controls}>
             <motion.h2
               variants={itemVariants}
-              className="text-3xl md:text-4xl font-playfair font-bold text-grafite mb-8"
+              className="text-3xl md:text-4xl font-playfair font-bold text-grafite mb-4"
             >
-              Sobre a <span className="text-dourado">Portal das Águas</span>
+              Bem-vindo ao <span className="text-dourado">Portal das Águas</span>
             </motion.h2>
 
-            <motion.p variants={itemVariants} className="text-lg text-grafite/80 leading-relaxed mb-8">
-              Há mais de 15 anos, a Portal das Águas se dedica a transformar sonhos em realidade. Nosso espaço exclusivo
-              foi projetado para proporcionar momentos inesquecíveis em um ambiente elegante e acolhedor, onde cada
-              detalhe é cuidadosamente planejado para superar suas expectativas.
+            <motion.p variants={itemVariants} className="text-lg bold text-dourado font-medium mb-8">
+              "Celebre seus momentos mais especiais com beleza, estrutura e tranquilidade"
+            </motion.p>
+
+            <motion.p variants={itemVariants} className="text-lg text-grafite/80 leading-relaxed mb-6">
+              O Portal das Águas é o resultado de mais de 25 anos de dedicação da Família Gutstein à arte de celebrar.
+              Após décadas realizando eventos memoráveis em diversos espaços da região, criamos um lugar próprio para
+              oferecer uma experiência ainda mais completa, acolhedora e inesquecível.
+            </motion.p>
+
+            <motion.p variants={itemVariants} className="text-lg text-grafite/80 leading-relaxed mb-6">
+              Nosso espaço foi pensado para transformar sonhos em realidade: áreas ao ar livre rodeadas pela natureza,
+              um salão moderno e sofisticado, e uma equipe familiar que cuida de cada detalhe com carinho, eficiência e
+              profissionalismo.
+            </motion.p>
+
+            <motion.p variants={itemVariants} className="text-lg text-grafite/80 leading-relaxed mb-6">
+              Aqui, você encontra tudo em um só lugar — do espaço à organização. Ajudamos você a planejar cada etapa,
+              sem estresse, com soluções personalizadas e suporte integral. Para casamentos, aniversários ou eventos
+              corporativos, o Portal das Águas é o cenário ideal para viver momentos únicos.
             </motion.p>
 
             <motion.p variants={itemVariants} className="text-lg text-grafite/80 leading-relaxed">
-              Com uma equipe experiente e apaixonada pelo que faz, garantimos que seu evento seja único e personalizado,
-              refletindo sua personalidade e desejos. Seja um casamento, festa de 15 anos, aniversário ou evento
-              corporativo, estamos comprometidos em criar experiências memoráveis que ficarão para sempre em seu
-              coração.
+              Agende uma visita e venha conhecer de perto o lugar onde grandes histórias começam.
             </motion.p>
           </motion.div>
 
