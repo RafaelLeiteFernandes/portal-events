@@ -7,32 +7,18 @@ import { ChevronLeft, ChevronRight, Quote, Star, ExternalLink } from "lucide-rea
 const testimonials = [
   {
     id: 1,
-    name: "Ana e Pedro",
+    name: "Adriana Seidel",
     event: "Casamento",
-    text: "Nosso casamento foi um sonho realizado! A equipe da Portal das Águas cuidou de cada detalhe com carinho e profissionalismo. O espaço é deslumbrante e todos os convidados ficaram encantados.",
+    text: "A festa do casamento foi realizada em um lugar MUITO LINDO: o Portal das Águas! Tudo ficou perfeito – o espaço, o deck, o salão, o quiosque, toda a decoração... Fiquei apaixonada pelo trabalho do local e do cerimonial. O almoço foi feito pela Solanja e equipe do Portal das Águas. Estava MARAVILHOSO. Obrigada pela dedicação!",
     rating: 5,
   },
   {
     id: 2,
-    name: "Família Silva",
-    event: "Festa de 15 anos",
-    text: "A festa de 15 anos da nossa filha foi perfeita! O ambiente elegante e o atendimento impecável fizeram toda a diferença. Recomendamos a todos que desejam um evento inesquecível.",
+    name: "Carol Mueller",
+    event: "Casamento",
+    text: "Equipe maravilhosa, que cuidou de cada detalhe com tanto amor! A melhor janta que poderíamos prestigiar hoje... Sobras do almoço do nosso casamento, que a equipe do Esítio Portal das Águas preparou pra nós! Eles nos cuidaram com tanto amor! Lugar incrível, fornecedores que não mediram esforços para nos surpreender em cada detalhe. No momento, faltam palavras para descrever tamanha alegria e gratidão que estamos sentindo!",
     rating: 5,
-  },
-  {
-    id: 3,
-    name: "Empresa XYZ",
-    event: "Evento Corporativo",
-    text: "Realizamos nosso evento anual na Portal das Águas e superou todas as expectativas. A infraestrutura é excelente e a equipe muito atenciosa. Certamente voltaremos para os próximos eventos.",
-    rating: 5,
-  },
-  {
-    id: 4,
-    name: "Marcela e Família",
-    event: "Aniversário",
-    text: "Celebrar meu aniversário na Portal das Águas foi uma experiência incrível. O espaço é lindo, a comida deliciosa e o atendimento excepcional. Todos os convidados elogiaram a escolha do local.",
-    rating: 5,
-  },
+  }
 ]
 
 export default function TestimonialsSection() {
@@ -51,7 +37,7 @@ export default function TestimonialsSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextTestimonial()
-    }, 6000)
+    }, 10000)
 
     return () => clearInterval(interval)
   }, [])

@@ -15,7 +15,7 @@ const categories = [
     id: "15-anos",
     title: "15 Anos",
     description: "Comemore esta data especial com uma festa inesquecível.",
-    image: "/IMG_20221121_132252_009.jpg",
+    image: "/15anos.jpeg",
   },
   {
     id: "aniversarios",

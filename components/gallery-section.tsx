@@ -9,42 +9,42 @@ const galleryImages = [
   {
     id: 1,
     src: "/temp/1 (3).png",
-    alt: "Recepção de casamento elegante",
+    alt: "Alianças de casamento",
   },
   {
     id: 2,
     src: "/temp/1 (4).png",
-    alt: "Cerimônia ao ar livre",
+    alt: "Cerimônia indor",
   },
   {
     id: 3,
     src: "/temp/1 (2).png",
-    alt: "Festa de 15 anos",
+    alt: "Área externa",
   },
   {
     id: 4,
     src: "/temp/1 (7).png",
-    alt: "Evento corporativo",
+    alt: "Cerimônia ao ar livre",
   },
   {
     id: 5,
     src: "/temp/1 (6).png",
-    alt: "Bolo de casamento",
+    alt: "Cerimônia indor",
   },
   {
     id: 6,
     src: "/temp/1 (1).png",
-    alt: "Festa de aniversário",
+    alt: "Mesa de doces",
   },
   {
     id: 7,
     src: "/temp/1 (5).png",
-    alt: "Mesa de recepção",
+    alt: "Altar decorado",
   },
   {
     id: 8,
     src: "/temp/1 (8).png",
-    alt: "Espaço ao ar livre à noite",
+    alt: "Espaço ao ar livre",
   },
 ]
 

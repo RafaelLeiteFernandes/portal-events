@@ -99,9 +99,9 @@ export default function Footer() {
           <motion.div variants={itemVariants}>
             <h4 className="font-playfair text-xl font-bold text-white mb-6">Contato</h4>
             <address className="not-italic text-white/80 space-y-3">
-              <p>Rua das Flores, 123</p>
-              <p>Bairro Jardim - Cidade/UF</p>
-              <p>CEP: 00000-000</p>
+              <p>Rod. Municipal Estanislau Willner, Estr. Geral São Lourenço</p>
+              <p>São Lourenço</p>
+              <p>Mafra - SC, 89309-899</p>
               <p className="pt-3">
                 <a
                   href="tel:+5500000000000"
