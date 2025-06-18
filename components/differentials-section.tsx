@@ -39,7 +39,7 @@ const differentials = [
     id: 6,
     title: "Equipe própria de organização e cerimonial.",
     description: "Apoio completo do planejamento à execução do evento.",
-    images: ["/diferenciais/cerimonial1.jpeg", "/diferenciais/cerimonial2.jpeg"],
+    images: Array.from({ length: 7 }, (_, i) => `/diferential/cerimonial/cerimonial${i + 1}.jpeg`)
   },
   {
     id: 7,

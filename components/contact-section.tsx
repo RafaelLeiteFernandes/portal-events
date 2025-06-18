@@ -8,7 +8,13 @@ import * as z from "zod"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
 
 const formSchema = z.object({
@@ -63,14 +69,25 @@ export default function ContactSection() {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true)
 
+    // Mapeia os campos para rótulos em português
+    const payload = {
+      "Nome completo": data.name,
+      "E-mail": data.email,
+      "Telefone": data.phone,
+      "Tipo de evento": data.eventType,
+      "Data e horário": data.date,
+      "Número de convidados": data.guests,
+      ...(data.location && { "Local da cerimônia": data.location }),
+      "Descrição do evento": data.description,
+    }
+
     try {
-      // Formspree endpoint - replace with your form ID
-      const response = await fetch("https://formspree.io/f/your-form-id", {
+      const response = await fetch("https://formspree.io/f/mgvyajdw", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       })
 
       if (response.ok) {
@@ -109,10 +126,7 @@ export default function ContactSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.22, 1, 0.36, 1],
-      },
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
     },
   }
 
@@ -121,17 +135,19 @@ export default function ContactSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.22, 1, 0.36, 1],
-      },
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
     },
   }
 
   return (
     <section id="contato" ref={sectionRef} className="section-spacing bg-off-white overflow-hidden">
       <div className="container mx-auto max-w-4xl">
-        <motion.div variants={containerVariants} initial="hidden" animate={controls} className="text-center mb-16">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={controls}
+          className="text-center mb-16"
+        >
           <motion.h2
             variants={titleVariants}
             className="text-3xl md:text-4xl font-playfair font-bold text-grafite mb-4"
@@ -268,7 +284,9 @@ export default function ContactSection() {
                   errors.description ? "border-red-300" : ""
                 }`}
               />
-              {errors.description && <p className="text-sm text-red-500 mt-1">{errors.description.message}</p>}
+              {errors.description && (
+                <p className="text-sm text-red-500 mt-1">{errors.description.message}</p>
+              )}
             </div>
 
             <motion.div

@@ -104,10 +104,10 @@ export default function Footer() {
               <p>Mafra - SC, 89309-899</p>
               <p className="pt-3">
                 <a
-                  href="tel:+5500000000000"
+                  href="tel:+47 997492858"
                   className="hover:text-dourado transition-colors duration-300 border-gradient inline-block"
                 >
-                  +55 (00) 00000-0000
+                  +55 (47) 47 99749-2858
                 </a>
               </p>
               <p>
@@ -137,11 +137,6 @@ export default function Footer() {
               Rafael Leite Fernandes
             </a>
           </motion.p>
-          <motion.div variants={itemVariants} className="mt-4 md:mt-0">
-            <Link href="/admin" className="text-white/60 text-sm hover:text-dourado transition-colors duration-300">
-              Área Administrativa
-            </Link>
-          </motion.div>
         </motion.div>
       </div>
     </footer>

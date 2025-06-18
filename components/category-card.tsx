@@ -1,23 +1,35 @@
 "use client"
 
-import Link from "next/link"
+import type React from "react"
+
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import { motion } from "framer-motion"
+import { Button } from "./ui/button"
 
 interface CategoryCardProps {
   title: string
   description: string
   image: string
   href: string
+  onClick?: () => void
+  isCorporativo?: boolean
 }
 
-export default function CategoryCard({ title, description, image, href }: CategoryCardProps) {
+export default function CategoryCard({ title, description, image, href, onClick, isCorporativo }: CategoryCardProps) {
+  const handleClick = (e: React.MouseEvent) => {
+    if (isCorporativo && onClick) {
+      e.preventDefault()
+      onClick()
+    }
+  }
+
   return (
     <motion.div
-      className="group relative overflow-hidden h-[400px]"
+      className="group relative overflow-hidden h-[400px] cursor-pointer"
       whileHover={{ y: -5 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
+      onClick={isCorporativo ? handleClick : undefined}
     >
       <div className="absolute inset-0 img-zoom-container">
         <Image src={image || "/placeholder.svg"} alt={title} fill className="object-cover img-zoom" priority />
@@ -53,11 +65,20 @@ export default function CategoryCard({ title, description, image, href }: Catego
           whileHover={{ opacity: 1, y: -5 }}
           transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
         >
-          <Link href={href}>
-            <Button className="bg-transparent hover:bg-dourado text-white border border-white hover:border-dourado transition-all duration-300 rounded-none btn-shine">
-              Ver eventos
+          {isCorporativo ? (
+            <Button
+              onClick={handleClick}
+              className="bg-transparent hover:bg-dourado text-white border border-white hover:border-dourado transition-all duration-300 rounded-none btn-shine"
+            >
+              Ver empresas
             </Button>
-          </Link>
+          ) : (
+            <Link href={href}>
+              <Button className="bg-transparent hover:bg-dourado text-white border border-white hover:border-dourado transition-all duration-300 rounded-none btn-shine">
+                Ver eventos
+              </Button>
+            </Link>
+          )}
         </motion.div>
       </div>
     </motion.div>

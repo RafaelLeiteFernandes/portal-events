@@ -24,17 +24,11 @@ export const metadata: Metadata = {
     generator: 'v0.dev'
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
-      <body className={`${playfair.variable} ${lato.variable} font-sans bg-off-white2`}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
+    <html lang="pt-BR">
+      <body suppressHydrationWarning className="font-sans bg-off-white">
+        {children}
       </body>
     </html>
   )
