@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react"
 import { motion, useInView, useAnimation, AnimatePresence, type PanInfo } from "framer-motion"
-import { ChevronLeft, ChevronRight, Quote, Star, ExternalLink } from "lucide-react"
+import { ChevronLeft, ChevronRight, Quote, Star, ExternalLink, ChevronDown, ChevronUp } from "lucide-react"
 
 const testimonials = [
   {
@@ -18,11 +18,19 @@ const testimonials = [
     event: "Casamento",
     text: "Equipe maravilhosa, que cuidou de cada detalhe com tanto amor! A melhor janta que poderíamos prestigiar hoje... Sobras do almoço do nosso casamento, que a equipe do Esítio Portal das Águas preparou pra nós! Eles nos cuidaram com tanto amor! Lugar incrível, fornecedores que não mediram esforços para nos surpreender em cada detalhe. No momento, faltam palavras para descrever tamanha alegria e gratidão que estamos sentindo!",
     rating: 5,
+  },
+  {
+    id: 3,
+    name: "Carlos e Camila",
+    event: "Casamento",
+    text: "Nosso casamento aconteceu no dia 03 de agosto de 2024, e não poderíamos ter escolhido lugar melhor do que o Sítio Portal das Águas. Desde o primeiro momento em que colocamos os pés lá, sentimos uma energia especial. A natureza exuberante ao redor, a beleza da água, o ar puro… tudo parecia conspirar para que nosso dia fosse mágico.\n\nSempre sonhei em ter um casamento ao ar livre, em meio ao verde, cercada pelas pessoas mais importantes da minha vida — e foi exatamente assim que aconteceu. A estrutura do sítio é impecável, tudo muito bem cuidado, pensado com carinho e atenção aos detalhes. Nos sentimos acolhidos, tranquilos e confiantes de que tudo sairia perfeito. E saiu. Cada cantinho do lugar contribuiu para tornar nosso casamento ainda mais inesquecível.\n\nAlém do espaço incrível, também somos imensamente gratos a toda a equipe que esteve ao nosso lado nesse dia tão especial. O cerimonial foi impecável, sempre presente e organizado, nos guiando com carinho e profissionalismo em cada etapa. A decoração estava deslumbrante (delicada, elegante e repleta de significado). E o buffet foi simplesmente maravilhoso: saboroso, bem servido e muito elogiado por todos os nossos convidados. Cada detalhe foi preparado com tanto cuidado que só temos a agradecer por tanta dedicação e entrega.\n\nRecomendo de coração o Sítio Portal das Águas. Foi mais do que um cenário lindo: foi parte da nossa história, do nosso sonho realizado. Seremos eternamente gratos por esse espaço tão especial e por todos que fizeram parte dele.",
+    rating: 5,
   }
 ]
 
 export default function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [expandedTestimonials, setExpandedTestimonials] = useState<Set<number>>(new Set())
   const controls = useAnimation()
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
@@ -37,7 +45,7 @@ export default function TestimonialsSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextTestimonial()
-    }, 10000)
+    }, 15000)
 
     return () => clearInterval(interval)
   }, [])
@@ -57,6 +65,31 @@ export default function TestimonialsSection() {
       nextTestimonial()
     }
   }
+
+  const toggleExpanded = (testimonialId: number) => {
+    setExpandedTestimonials(prev => {
+      const newSet = new Set(prev)
+      if (newSet.has(testimonialId)) {
+        newSet.delete(testimonialId)
+      } else {
+        newSet.add(testimonialId)
+      }
+      return newSet
+    })
+  }
+
+  const getTruncatedText = (text: string, maxLength: number = 200) => {
+    if (text.length <= maxLength) return text
+    
+    const truncated = text.substring(0, maxLength)
+    const lastSpace = truncated.lastIndexOf(' ')
+    return truncated.substring(0, lastSpace) + '...'
+  }
+
+  const isExpanded = expandedTestimonials.has(testimonials[currentIndex].id)
+  const currentTestimonial = testimonials[currentIndex]
+  const shouldTruncate = currentTestimonial.text.length > 200
+  const displayText = isExpanded ? currentTestimonial.text : getTruncatedText(currentTestimonial.text)
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -193,14 +226,35 @@ export default function TestimonialsSection() {
                     ))}
                   </motion.div>
 
-                  <motion.p
-                    className="text-lg md:text-xl text-grafite/80 italic mb-10 font-lato"
+                  <motion.div
+                    className="text-lg md:text-xl text-grafite/80 italic mb-6 font-lato text-left"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
                   >
-                    "{testimonials[currentIndex].text}"
-                  </motion.p>
+                    <div className="whitespace-pre-line">
+                      "{displayText}"
+                    </div>
+                    
+                    {shouldTruncate && (
+                      <motion.button
+                        onClick={() => toggleExpanded(currentTestimonial.id)}
+                        className="mt-4 inline-flex items-center gap-2 text-dourado hover:text-dourado/80 transition-colors duration-200 font-medium"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.4, duration: 0.5 }}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <span>{isExpanded ? 'Ler menos' : 'Ler mais'}</span>
+                        {isExpanded ? (
+                          <ChevronUp className="h-4 w-4" />
+                        ) : (
+                          <ChevronDown className="h-4 w-4" />
+                        )}
+                      </motion.button>
+                    )}
+                  </motion.div>
 
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}

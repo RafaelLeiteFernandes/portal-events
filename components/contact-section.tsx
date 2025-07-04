@@ -69,37 +69,28 @@ export default function ContactSection() {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true)
 
-    // Mapeia os campos para rótulos em português
-    const payload = {
-      "Nome completo": data.name,
-      "E-mail": data.email,
-      "Telefone": data.phone,
-      "Tipo de evento": data.eventType,
-      "Data e horário": data.date,
-      "Número de convidados": data.guests,
-      ...(data.location && { "Local da cerimônia": data.location }),
-      "Descrição do evento": data.description,
-    }
-
     try {
-      const response = await fetch("https://formspree.io/f/mgvyajdw", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(data),
       })
 
-      if (response.ok) {
+      const result = await response.json()
+
+      if (response.ok && result.success) {
         toast({
           title: "Mensagem enviada!",
           description: "Entraremos em contato em breve.",
         })
         reset()
       } else {
-        throw new Error("Falha ao enviar o formulário")
+        throw new Error(result.error || "Falha ao enviar o formulário")
       }
     } catch (error) {
+      console.error("Erro ao enviar formulário:", error)
       toast({
         title: "Erro ao enviar",
         description: "Ocorreu um erro. Tente novamente mais tarde.",
