@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app"
 import { getAuth } from "firebase/auth"
 import { getFirestore } from "firebase/firestore"
-import { getStorage } from "firebase/storage"
 
 // Verifica se as variáveis de ambiente estão definidas
 const hasValidConfig = () => {
@@ -12,7 +11,7 @@ const hasValidConfig = () => {
   )
 }
 
-let app, auth, db, storage
+let app, auth, db
 
 try {
   if (hasValidConfig()) {
@@ -28,10 +27,9 @@ try {
     // Initialize Firebase
     app = initializeApp(firebaseConfig)
 
-    // Initialize Firebase services
+    // Initialize Firebase services (sem Storage)
     auth = getAuth(app)
     db = getFirestore(app)
-    storage = getStorage(app)
   } else {
     console.warn("Configuração do Firebase incompleta. Usando modo de demonstração.")
   }
@@ -39,5 +37,5 @@ try {
   console.error("Erro ao inicializar o Firebase:", error)
 }
 
-export { app, auth, db, storage }
+export { app, auth, db }
 export default app

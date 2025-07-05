@@ -72,13 +72,13 @@ export default function CategoryCard({ title, description, image, href, onClick,
             >
               Ver empresas
             </Button>
-          ) : (
+          ) : null /*
             <Link href={href}>
               <Button className="bg-transparent hover:bg-dourado text-white border border-white hover:border-dourado transition-all duration-300 rounded-none btn-shine">
                 Ver eventos
               </Button>
             </Link>
-          )}
+          */}
         </motion.div>
       </div>
     </motion.div>

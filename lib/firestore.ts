@@ -122,6 +122,9 @@ export const getEventsByCategory = async (category: string): Promise<Event[]> =>
       })
     })
 
+    console.log("[DEBUG] Categoria buscada:", category)
+    console.log("[DEBUG] Eventos retornados:", events)
+
     return events
   } catch (error) {
     console.error("Error getting events: ", error)

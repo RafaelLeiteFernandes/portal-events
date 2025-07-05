@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
     // Enviar email
     const { data, error } = await resend.emails.send({
       from: 'Portal das Águas <onboarding@resend.dev>',
-      to: ['solanjagutstein12@gmail.com'], // Email que vai receber
+      to: ['rafaelleitefernandes7@gmail.com'], // Email que vai receber
       subject: `Novo contato: ${eventType} - ${name}`,
       html: emailContent,
       replyTo: email, // Para responder diretamente ao cliente
