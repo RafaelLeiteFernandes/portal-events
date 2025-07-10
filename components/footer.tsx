@@ -112,10 +112,10 @@ export default function Footer() {
               </p>
               <p>
                 <a
-                  href="mailto:contato@portaldasaguas.com"
+                  href="mailto:solanjagutstein12@gmail.com"
                   className="hover:text-dourado transition-colors duration-300 border-gradient inline-block"
                 >
-                  contato@portaldasaguas.com
+                  solanjagutstein12@gmail.com
                 </a>
               </p>
             </address>

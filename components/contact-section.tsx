@@ -66,6 +66,18 @@ export default function ContactSection() {
 
   const eventType = watch("eventType")
 
+  function formatPhone(value: string) {
+    value = value.replace(/\D/g, "");
+    if (value.length > 11) value = value.slice(0, 11);
+    if (value.length > 6) {
+      return value.replace(/(\d{2})(\d{5})(\d{0,4})/, "($1) $2-$3").replace(/-$/, "");
+    } else if (value.length > 2) {
+      return value.replace(/(\d{2})(\d{0,5})/, "($1) $2");
+    } else {
+      return value.replace(/(\d{0,2})/, "($1");
+    }
+  }
+
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true)
 
@@ -195,6 +207,8 @@ export default function ContactSection() {
                   id="phone"
                   placeholder="(00) 00000-0000"
                   {...register("phone")}
+                  value={watch("phone")}
+                  onChange={e => setValue("phone", formatPhone(e.target.value))}
                   className={`input-minimal focus-ring ${errors.phone ? "border-red-300" : ""}`}
                 />
                 {errors.phone && <p className="text-sm text-red-500 mt-1">{errors.phone.message}</p>}
