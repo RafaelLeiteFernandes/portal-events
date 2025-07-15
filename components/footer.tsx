@@ -71,6 +71,18 @@ export default function Footer() {
                 </Link>
               </motion.div>
             </div>
+            <div style={{ width: '100%', marginTop: '1rem' }}>
+              <iframe
+                title="Localização Portal das Águas"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.010964479836!2d-49.8797273!3d-26.1402243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dd8d36f4e40f3d%3A0xdd2c4688ed7e7ce7!2sPortal%20Das%20%C3%81guas%20-%20Espa%C3%A7o%20de%20Eventos!5e0!3m2!1spt-BR!2sbr!4v1713460000000!5m2!1spt-BR!2sbr"
+                width="100%"
+                height="200"
+                style={{ border: 0, borderRadius: '12px' }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </motion.div>
 
           <motion.div variants={itemVariants}>
